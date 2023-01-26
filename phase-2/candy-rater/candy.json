@@ -1,0 +1,162 @@
+{
+  "candies": [
+    {
+      "id": 1,
+      "name": "Reese's",
+      "type_of_candy": "Chocolate",
+      "image": "https://tinyurl.com/yne29e94",
+      "number_of_likes": 1000000,
+      "number_of_dislikes": 0,
+      "nutrition_facts": {
+        "serving_size": "1 cup (17g)",
+        "calories": 87,
+        "sugar": "8g",
+        "sodium": "61mg",
+        "protien": "1.7g"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Starburst",
+      "type_of_candy": "Chewy",
+      "image": "https://i.imgur.com/70vm0MD.jpeg",
+      "number_of_likes": 13,
+      "number_of_dislikes": 2,
+      "nutrition_facts": {
+        "serving_size": "6 pieces (29g)",
+        "calories": 120,
+        "sugar": "16g",
+        "sodium": "0mg",
+        "protien": "0g"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Twizzlers",
+      "type_of_candy": "Chewy",
+      "image": "https://tinyurl.com/5xprm5md",
+      "number_of_likes": 6,
+      "number_of_dislikes": 6,
+      "nutrition_facts": {
+        "serving_size": "4 pieces (45g)",
+        "calories": 160,
+        "sugar": "19g",
+        "sodium": "95mg",
+        "protien": "1g"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Skittles",
+      "type_of_candy": "Chewy",
+      "image": "https://tinyurl.com/wa5sv52r",
+      "number_of_likes": 20,
+      "number_of_dislikes": 5,
+      "nutrition_facts": {
+        "serving_size": "1 pack (62g)",
+        "calories": 251,
+        "sugar": "47g",
+        "sodium": "9mg",
+        "protien": "0.1g"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Snickers",
+      "type_of_candy": "Chocolate",
+      "image": "https://tinyurl.com/b9dbm4a9",
+      "number_of_likes": 18,
+      "number_of_dislikes": 7,
+      "nutrition_facts": {
+        "serving_size": "1 bar (44g)",
+        "calories": 215,
+        "sugar": "20g",
+        "sodium": "83mg",
+        "protien": "3g"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Blow Pop",
+      "type_of_candy": "Hard Candy",
+      "image": "https://tinyurl.com/3983777x",
+      "number_of_likes": 15,
+      "number_of_dislikes": 4,
+      "nutrition_facts": {
+        "serving_size": "1 pop (18g)",
+        "calories": 70,
+        "sugar": "13g",
+        "sodium": "9mg",
+        "protien": "0g"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Candy Corn",
+      "type_of_candy": "Chewy",
+      "image": "https://tinyurl.com/4v49pwfy",
+      "number_of_likes": 3,
+      "number_of_dislikes": 30,
+      "nutrition_facts": {
+        "serving_size": "40g",
+        "calories": 150,
+        "sugar": "30g",
+        "sodium": "40mg",
+        "protien": "0g"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Hershey",
+      "type_of_candy": "Chocolate",
+      "image": "https://tinyurl.com/mzf9nupn",
+      "number_of_likes": 17,
+      "number_of_dislikes": 6,
+      "nutrition_facts": {
+        "serving_size": "1 bar (43g)",
+        "calories": 220,
+        "sugar": "24g",
+        "sodium": "35mg",
+        "protien": "3g"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Jolly Ranchers",
+      "type_of_candy": "Hard Candy",
+      "image": "https://tinyurl.com/2rjvjjvr",
+      "number_of_likes": 16,
+      "number_of_dislikes": 4,
+      "nutrition_facts": {
+        "serving_size": "3 pieces (18g)",
+        "calories": 70,
+        "sugar": "11g",
+        "sodium": "0mg",
+        "protien": "0g"
+      }
+    },
+    {
+      "id": 10,
+      "name": "M&M's",
+      "type_of_candy": "Chocolate",
+      "image": "https://tinyurl.com/mr3nfzzx",
+      "number_of_likes": 10,
+      "number_of_dislikes": 3,
+      "nutrition_facts": {
+        "serving_size": "32 pieces (28g)",
+        "calories": 140,
+        "sugar": "18g",
+        "sodium": "20mg",
+        "protien": "1g"
+      }
+    },
+    {
+      "name": "",
+      "type_of_candy": "hard candy",
+      "image": "https://cdn.shopify.com/s/files/1/0636/2519/9866/products/133763-02_jolly-rancher-awesome-reds-hard-candy-13-ounce-bag_320x.jpg?v=1674642731",
+      "number_of_likes": 1,
+      "number_of_dislikes": 0,
+      "id": 11
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 
-body {
+.login-body {
 	background: #f6f5f7;
 	display: flex;
 	justify-content: center;
@@ -16,16 +16,16 @@ body {
 	margin: -20px 0 50px;
 }
 
-h1 {
+.login-h1 {
 	font-weight: bold;
 	margin: 0;
 }
 
-h2 {
+.login-h2 {
 	text-align: center;
 }
 
-p {
+.login-p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -33,7 +33,7 @@ p {
 	margin: 20px 0 30px;
 }
 
-span {
+.login-span {
 	font-size: 12px;
 }
 
@@ -159,7 +159,7 @@ input {
 	transform: translateX(-100%);
 }
 
-.overlay {
+.login-overlay {
 	background: #FF416C;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	background: linear-gradient(to right, #FF4B2B, #FF416C);
@@ -175,11 +175,11 @@ input {
 	transition: transform 0.6s ease-in-out;
 }
 
-.login-container.right-panel-active .overlay {
+.login-container.right-panel-active .login-overlay {
   	transform: translateX(50%);
 }
 
-.overlay-panel {
+.login-overlay-panel {
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -194,20 +194,20 @@ input {
 	transition: transform 0.6s ease-in-out;
 }
 
-.overlay-left {
+.login-overlay-left {
 	transform: translateX(-20%);
 }
 
-.login-container.right-panel-active .overlay-left {
+.login-container.right-panel-active .login-overlay-left {
 	transform: translateX(0);
 }
 
-.overlay-right {
+.login-overlay-right {
 	right: 0;
 	transform: translateX(0);
 }
 
-.login-container.right-panel-active .overlay-right {
+.login-container.right-panel-active .login-overlay-right {
 	transform: translateX(20%);
 }
 

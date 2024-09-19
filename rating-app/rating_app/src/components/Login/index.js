@@ -22,7 +22,8 @@ function Login () {
     return (
       <>
       {/* HTML for the Login Page */}
-      <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+      <body className="login-body">
+      <h2 className="login-h2" >Weekly Coding Challenge #1: Sign in/up Form</h2>
       <div className={`login-container ${isRightPanelActive ? 'right-panel-active' : ''}`} id="container">
         <div class="login-form-container login-sign-up-container">
           <form action="#">
@@ -41,13 +42,13 @@ function Login () {
         </div>
         <div class="login-form-container login-sign-in-container">
           <form action="#">
-            <h1>Sign in</h1>
+            <h1 className="login-h1">Sign in</h1>
             <div class="login-social-container">
               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <span>or use your account</span>
+            <span className="login-span">or use your account</span>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
@@ -55,15 +56,15 @@ function Login () {
           </form>
         </div>
         <div class="login-overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left">
+          <div class="login-overlay">
+            <div class="login-overlay-panel login-overlay-left">
               <h1>Welcome Back!</h1>
-              <p>To keep connected with us please login with your personal info</p>
+              <p className="login-p">To keep connected with us please login with your personal info</p>
               <button class="ghost" id="signIn">Sign In</button>
             </div>
-            <div class="overlay-panel overlay-right">
+            <div class="login-overlay-panel login-overlay-right">
               <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
+              <p className="login-p">Enter your personal details and start journey with us</p>
               <button class="ghost" id="signUp"  onClick={handleSignUp}><Link to="/signup"></Link>Sign Up</button>
             </div>
           </div>
@@ -76,6 +77,7 @@ function Login () {
           Developed by Reese Marshall. All Rights Reserved.
         </p>
       </footer>
+      </body>
       </>
     )
 

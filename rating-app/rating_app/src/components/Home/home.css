@@ -1,0 +1,123 @@
+/* Main container for the carousel */
+.home-carousel-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Card container for the image */
+.home-card {
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  position: relative;
+}
+
+/* Carousel image styling */
+.home-carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Title username styling */
+.home-box-title {
+  border-left: 3px solid var(--purple);
+  display: flex;
+  justify-content: left;
+}
+
+.home-h6 {
+  display: flex;
+  justify-content: left;
+  margin-bottom:0px !important;
+}
+
+/* Controls (Previous/Next buttons) */
+.home-carousel-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-carousel-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-carousel-button:hover {
+  background-color: #0056b3;
+}
+
+
+.rating-round-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%; /* Make the button round */
+  background-color: #ffffff; /* Green background */
+  color: black; /* White text */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  padding: 16px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.rating-button-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.rating-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  width: 1px;
+  height: 1px;
+  border-radius: 100%;
+  padding: 16px;
+  color: #000;
+  background: transparent;
+  box-shadow: 0px 0px 0px 1px black inset;
+  transition: background 0.4s ease;
+}
+
+.rating-buttons {
+  display: flex;
+}
+
+.rating-round-button:hover {
+  background: var(--gray);
+}
+
+.fill-one {
+  background: var(--light-bg);
+}
+
+.fill-two {
+  background: var(--pink);
+} 
+
+/* Make sure the layout adapts to smaller screens */
+@media (max-width: 768px) {
+  .carousel-button {
+    padding: 8px 15px;
+  }
+}

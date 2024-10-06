@@ -37,14 +37,14 @@
 	font-size: 12px;
 }
 
-a {
+.login-a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
 
-button {
+.login-button {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
@@ -57,20 +57,20 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.login-button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.login-button:focus {
 	outline: none;
 }
 
-button.ghost {
+.login-button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
-form {
+.login-form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -90,7 +90,7 @@ input {
 }
 
 .login-container {
-	background-color: #fff;
+	background-color: #ffffff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
@@ -158,7 +158,7 @@ input {
 .login-container.right-panel-active .login-overlay-container{
 	transform: translateX(-100%);
 }
-
+/* This changes the color on the right */
 .login-overlay {
 	background: #FF416C;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
@@ -224,6 +224,10 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+}
+
+a {
+color: inherit;
 }
 
 footer {

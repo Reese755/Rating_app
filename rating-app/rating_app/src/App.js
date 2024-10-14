@@ -5,6 +5,7 @@ import About from './components/About';
 import Home from './components/Home';
 import Survey from './components/Survey';
 import Navbar from './components/NavBar';
+import Profile from './components/Profile';
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Route path="signup" element={<Signup />}/>
       <Route path="about" element={<About />}/>
       <Route path="survey" element={<Survey />}/>
+      <Route path="profile" element={<Profile />}/>
     </Routes>
     </div>
   </>

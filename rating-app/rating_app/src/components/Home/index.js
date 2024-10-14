@@ -13,7 +13,7 @@ function Home () {
 
 
   const images = [
-    'https://via.placeholder.com/300x200.png?text=Image+1',
+    'https://i.imgur.com/UwuQ4pq.jpeg',
     'https://via.placeholder.com/300x200.png?text=Image+2',
     'https://via.placeholder.com/300x200.png?text=Image+3',
   ];

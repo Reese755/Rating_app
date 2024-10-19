@@ -1,0 +1,15 @@
+.chart-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    min-height: 100vh; /* Takes up full viewport height */
+    margin-left: 250px;
+  }
+  
+  .mixed-chart {
+    width: 500px; /* Adjust width of the chart container */
+  }
+
+  .rating-h3 {
+    color: #fff;
+  }

@@ -18,7 +18,7 @@
 
 /* Section button styling */
 .about-section-button {
-  background-color: #007BFF;
+  background-color: #333F;
   color: white;
   padding: 15px;
   border: none;
@@ -32,7 +32,7 @@
 }
 
 .about-section-button:hover {
-  background-color: #0056b3;
+  background-color: #333;
 }
 
 /* Content that appears when sections are opened */

@@ -18,27 +18,27 @@ function Profile () {
 
   <form className="profile-form">
     <div className="profile-form-group">
-      <label className='profile-label' htmlFor="name">Name:</label>
+      <label className='profile-label' htmlFor="name">Name: Reese</label>
       <input type="text" id="name" placeholder="Enter your name" />
     </div>
 
     <div className="profile-form-group">
-      <label className='profile-label' htmlFor="age">Age:</label>
+      <label className='profile-label' htmlFor="age">Age: 30</label>
       <input type="number" id="age" placeholder="Enter your age" />
     </div>
 
     <div className="profile-form-group">
-      <label className='profile-label' htmlFor="weight">Weight (kg):</label>
+      <label className='profile-label' htmlFor="weight">Weight (lbs): 190</label>
       <input type="number" id="weight" placeholder="Enter your weight" />
     </div>
 
     <div className="profile-form-group">
-      <label className='profile-label' htmlFor="height">Height (cm):</label>
+      <label className='profile-label' htmlFor="height">Height (ft): 6'1</label>
       <input type="number" id="height" placeholder="Enter your height" />
     </div>
 
     <div className="profile-form-group">
-      <label className='profile-label' htmlFor="gender">Gender:</label>
+      <label className='profile-label' htmlFor="gender">Gender: Male</label>
       <select id="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -47,7 +47,7 @@ function Profile () {
     </div>
 
     <div className="profile-form-group">
-      <label className='profile-label' htmlFor="location">Location:</label>
+      <label className='profile-label' htmlFor="location">Location: New York</label>
       <input type="text" id="location" placeholder="Enter your location" />
     </div>
 

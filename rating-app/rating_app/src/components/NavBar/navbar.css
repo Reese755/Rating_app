@@ -1,19 +1,30 @@
 /* Navbar.css */
 .navbar {
-    background-color: #333;
-    padding: 10px;
+    background-color: #11CAE9;
+    padding: 10px; /* make the padding 10px when making it horizontal/ make the padding 20px 10px; when making it vertical*/
+    height: 100vh; /* make the height 50px when making it horizontal */
+    /* delete everything  under here/commit it out when switching between vertical and horizontal */
+    width: 150px; /* Set a fixed width for the sidebar */
+    position: fixed; /* Fix the position on the left side */
+    top: 0; /* Start at the top */
+    left: 0; /* Align to the left edge */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   
   .navbar-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    flex-direction: column; /* Add this when using vertical navbar */
+    display: flex; 
     gap: 15px;
   }
   
   .navbar-list li {
-    display: inline;
+    display: flex; /*set this to center for horizontal navbar */  
+    justify-content: center;
   }
   
   .navbar-list li a {
@@ -22,6 +33,7 @@
     padding: 8px 16px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    display: block;
   }
   
   .navbar-list li a:hover {

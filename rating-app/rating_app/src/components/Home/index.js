@@ -1,33 +1,192 @@
 import React, { useState } from 'react';
 import './home.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars} from '@fortawesome/free-solid-svg-icons';
 
 function Home () {
 
   // Test data before making backend
-  const height = ['6 foot 1'];
-  const age = ['30'];
-  const gender = ['male'];
-  const weight = ['190'];
-  const user = ['Reese'];
-  
+ 
+  const users = [
+    {
+      name: 'Reese',
+      age: 30,
+      height: "6'1",
+      weight: '190 lbs',
+      gender: 'male',
+      images: [
+        'https://i.imgur.com/UwuQ4pq.jpeg',
+        'https://i.imgur.com/CNmLa67.png',
+        'https://i.imgur.com/vVqDfQN.jpeg',
+      ]
+    },
 
+    {
+      name: 'Taylor',
+      age: 25,
+      height: "5'4",
+      weight: '120 lbs',
+      gender: 'female',
+      images: [
+        'https://tinyurl.com/yc6d3ktm',
+        'https://tinyurl.com/mtfratr4',
+        'https://tinyurl.com/3yw5svz5',
+      ]
+    },
 
-  const images = [
-    'https://i.imgur.com/UwuQ4pq.jpeg',
-    'https://via.placeholder.com/300x200.png?text=Image+2',
-    'https://via.placeholder.com/300x200.png?text=Image+3',
+    {
+      name: 'Arianna Grande',
+      age: 30,
+      height: "5'1",
+      weight: '106 lbs',
+      gender: 'female',
+      images: [
+        'https://tinyurl.com/44ju4s2t',
+        'https://tinyurl.com/yj9p67vn',
+        'https://tinyurl.com/473j4juv',
+      ]
+    },
+
+    {
+      name: 'Sydney Sweeney',
+      age: 27,
+      height: "5'3",
+      weight: '117 lbs',
+      gender: 'female',
+      images: [
+        'https://tinyurl.com/yyt69dvk',
+        'https://tinyurl.com/bdeb3fau',
+        'https://tinyurl.com/3kr6e76c',
+      ]
+    },
+
+    {
+      name: 'Lizzo',
+      age: 36,
+      height: "5'10",
+      weight: '271 lbs',
+      gender: 'female',
+      images: [
+        'https://tinyurl.com/2p9ybrf8',
+        'https://tinyurl.com/59sapzbd',
+        'https://tinyurl.com/y65pantp',
+      ]
+    },
+
+    {
+      name: 'Jack Black',
+      age: 55,
+      height: "5'6",
+      weight: '245 lbs',
+      gender: 'male',
+      images: [
+        'https://tinyurl.com/3dry4uv9',
+        'https://tinyurl.com/bdzh572t',
+        'https://tinyurl.com/46ejke9n',
+      ]
+    },
+
+    {
+      name: 'Jason Momoa',
+      age: 41,
+      height: "6'4",
+      weight: '224 lbs',
+      gender: 'male',
+      images: [
+        'https://tinyurl.com/cz82hj73',
+        'https://tinyurl.com/e8bywv3u',
+        'https://tinyurl.com/3h3rh3c4',
+      ]
+    },
+
+    {
+      name: 'Jay Z',
+      age: 55,
+      height: "6'1",
+      weight: '182 lbs',
+      gender: 'male',
+      images: [
+        'https://tinyurl.com/3udyt7bm',
+        'https://tinyurl.com/5xmrb8ac',
+        'https://tinyurl.com/48vrvvpr',
+      ]
+    },
+   
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentUserIndex, setCurrentUserIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [filteredUsers, setFilteredUsers] = useState(users); // For filtering users
+  const [selectedGender, setSelectedGender] = useState('all'); // Track selected filter
+  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false); // State for filter dropdown visibility
+
+  const toggleFilterDropdown = () => {
+    setIsFilterDropdownOpen(!isFilterDropdownOpen);
+  };
+
+
+  // Function to filter users by gender
+  const filterUsersByGender = (gender) => {
+    setSelectedGender(gender);
+    let filtered = [];
+    if (gender === 'all') {
+      filtered = users;
+    } else {
+      filtered = users.filter(user => user.gender === gender);
+    }
+    setFilteredUsers(filtered);
+    setCurrentUserIndex(0);  // Reset to the first filtered user
+    setCurrentIndex(0);  // Reset image index for the new user
+    setIsFilterDropdownOpen(false); // Close dropdown after selection
+  };
+
+  // Handles picture cycling events
   const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredUsers[currentUserIndex].images.length);
   };
 
   const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + filteredUsers[currentUserIndex].images.length) % filteredUsers[currentUserIndex].images.length);
   };
 
+  // Handles image enlargement events
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  //// Cycles through users in chronological order. Use when testing users
+
+
+  const switchUser = () => {
+    setCurrentUserIndex((prevIndex) => (prevIndex + 1) % users.length);
+    setCurrentIndex(0); // Reset image index when switching users
+  };
+
+
+  // Function to switch to a random user
+  // const switchUser = () => {
+  //   let randomIndex;
+  //   if (filteredUsers.length > 1) {
+  //     do {
+  //       randomIndex = Math.floor(Math.random() * filteredUsers.length);
+  //     } while (randomIndex === currentUserIndex); // Ensure it's not the same user
+  //   } else {
+  //     randomIndex = 0; // If only one user, stay on the current user
+  //   }
+
+  //   setCurrentUserIndex(randomIndex);
+  //   setCurrentIndex(0); // Reset image index for the new user
+  // };
+
+
+// When the backend is up and running, replace the other button const's with this
+  
   // const button1 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>1</button>
   // const button2 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>2</button>
   // const button3 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>3</button>
@@ -53,24 +212,61 @@ const button10 = <button className= "rating-round-button">10</button>
 
   return (
 
-    // Add a skip button to image carosel under the rating buttons
+    
+
+    // Add a skip profile button to image carosel under the rating buttons
     <div className="home-carousel-container">
+    <div className="filter-dropdown">
+        <FontAwesomeIcon icon={faBars} className="fa-filter-icon" onClick={toggleFilterDropdown} /> {/* Toggle filter dropdown */}
+        {isFilterDropdownOpen && (
+          <div className="dropdown-content">
+            <button onClick={() => filterUsersByGender('all')}>All</button>
+            <button onClick={() => filterUsersByGender('male')}>Male</button>
+            <button onClick={() => filterUsersByGender('female')}>Female</button>
+          </div>
+        )}
+      </div>
+    {filteredUsers.length > 0 ? (
       <div className="home-card">
-        <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="home-carousel-image" />
-        <h3 className="home-box-title">| {user}</h3>
-        <h6 className='home-h6'> Age: {age} </h6>
-        <h6 className='home-h6'> Height: {height}</h6>
-        <h6 className='home-h6'> Weight: {weight} </h6>
-        <h6 className='home-h6'> Gender: {gender} </h6>
-        <br/>
-        <div className="rating-button-container">{button1}{button2}{button3}{button4}{button5}{button6}{button7}{button8}{button9}{button10}</div>;
+        <div className="home-carousel-image">
+          <div className="image-wrapper">
+            <img
+              src={filteredUsers[currentUserIndex].images[currentIndex]} // Use filteredUsers instead of users
+              alt={`Slide ${currentIndex + 1}`}
+              className="clickable-image"
+              onClick={openModal}
+            />
+            <div className="left-clickable" onClick={prevImage}></div>
+            <div className="right-clickable" onClick={nextImage}></div>
+          </div>
+        </div>
+        <h2 className="home-box-title">| {filteredUsers[currentUserIndex].name}</h2> {/* Use filteredUsers */}
+        <h5 className="home-h5"> Age: {filteredUsers[currentUserIndex].age} </h5>
+        <h5 className="home-h5"> Height: {filteredUsers[currentUserIndex].height}</h5>
+        <h5 className="home-h5"> Weight: {filteredUsers[currentUserIndex].weight} </h5>
+        <h5 className="home-h5"> Gender: {filteredUsers[currentUserIndex].gender} </h5>
+
+        {/* Modal for larger image */}
+        {isModalOpen && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={filteredUsers[currentUserIndex].images[currentIndex]} // Use filteredUsers
+                alt="Large view"
+                className="large-image"
+              />
+              <button className="close-button" onClick={closeModal}>
+                &times;
+              </button>
+            </div>
+          </div>
+        )}
+        <div className="rating-button-container" onClick={switchUser}>{button1}{button2}{button3}{button4}{button5}{button6}{button7}{button8}{button9}{button10}</div>
         
            </div>
-      <div className="home-carousel-controls">
-        
-        <button className="home-carousel-button" onClick={prevImage}>Previous</button>
-        <button className="home-carousel-button" onClick={nextImage}>Next</button>
-      </div>
+            ) : (
+              <div>No users available for this filter.</div>
+            )}
     </div>
   );
 };

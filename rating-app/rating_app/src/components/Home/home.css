@@ -3,7 +3,10 @@
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  padding-top: 0px; /* set padding to 50px if using horizontal navbar */
+  margin-left: 600px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Card container for the image */
@@ -17,24 +20,74 @@
   flex-direction: column;
   flex-basis: 100%;
   position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 100%;
+}
+
+/* Makes the image cycle through pictures on click */
+.left-clickable {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%; /* Each clickable area takes up half the width */
+  cursor: pointer;
+  z-index: 1;
+}
+
+.right-clickable {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%; /* Each clickable area takes up half the width */
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+/* Allows for Debugging of clickable area. Change the last rgba value from 0 to add color */
+.left-clickable {
+  left: 0;
+  background-color: rgba(255, 0, 0, 0); /* Optional: Add color for debugging */
+}
+
+.right-clickable {
+  right: 0;
+  background-color: rgba(0, 0, 255, 0); /* Optional: Add color for debugging */
 }
 
 /* Carousel image styling */
 .home-carousel-image {
- max-width: 100%; 
-    height: auto;   
+    max-width: 100%; 
+    width: 100%;
+    height: 400px;  
+    object-position: 50% 20%;
     margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    padding: 5px;
+    text-align: center;   
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .home-carousel-image img{
 width: 100%;
 height: 100%;
 object-fit: cover;
+object-position: center;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Adjust this to match your image's aspect ratio */
+  max-width: 550px;
+  min-width: 500px;
+  max-height: 550px;
+  
 }
 
 /* Title username styling */
@@ -44,30 +97,11 @@ object-fit: cover;
   justify-content: left;
 }
 
-.home-h6 {
+.home-h5 {
   display: flex;
   justify-content: left;
   margin-bottom:0px !important;
-}
-
-/* Controls (Previous/Next buttons) */
-.home-carousel-controls {
-  display: flex;
-  justify-content: space-between;
-}
-
-.home-carousel-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.home-carousel-button:hover {
-  background-color: #0056b3;
+  padding-bottom: 10px;
 }
 
 
@@ -86,6 +120,7 @@ object-fit: cover;
   transition: background-color 0.3s ease;
   padding: 16px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #0b0a0a;
 }
 
 
@@ -116,6 +151,7 @@ object-fit: cover;
 
 .rating-round-button:hover {
   background: var(--gray);
+  background-color: #33333355;
 }
 
 .fill-one {
@@ -125,6 +161,90 @@ object-fit: cover;
 .fill-two {
   background: var(--pink);
 } 
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.large-image {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.close-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-button:hover {
+  background-color: #33333355;
+}
+
+/* Css for dropdown filter */
+
+.filter-dropdown {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.fa-filter-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #32e9e0;
+  margin: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
+  z-index: 1;
+}
+
+.filter-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content button {
+  background-color: white;
+  border: none;
+  padding: 8px 12px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
 
 /* Make sure the layout adapts to smaller screens */
 @media (max-width: 768px) {

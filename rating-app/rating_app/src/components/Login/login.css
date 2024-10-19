@@ -46,8 +46,8 @@
 
 .login-button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #11CAE9;
+	background-color: #11CAE9;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -160,9 +160,9 @@ input {
 }
 /* This changes the color on the right */
 .login-overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #333;
+	background: -webkit-linear-gradient(to right, #333, #333);
+	background: linear-gradient(to right, #333, #333);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -246,11 +246,3 @@ footer p {
     margin: 10px 0;
 }
 
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}

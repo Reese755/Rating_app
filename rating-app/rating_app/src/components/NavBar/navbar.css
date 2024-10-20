@@ -1,4 +1,8 @@
 /* Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Updock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Updock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Great+Vibes&family=Updock&display=swap');
+
 .navbar {
     background-color: #11CAE9;
     padding: 10px; /* make the padding 10px when making it horizontal/ make the padding 20px 10px; when making it vertical*/
@@ -38,4 +42,13 @@
   
   .navbar-list li a:hover {
     background-color: #575757;
+  }
+
+  .navbar-header {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: "Encode Sans", sans-serif;
+   
   }

@@ -76,6 +76,7 @@ class Rating extends Component {
           data: [100, 200] // Corresponding data for "How Many Times You've Been Rated" and "How Many People You've Rated"
         }
       ],
+    //   Third Chart Data
       options3: {
         colors: ['#11CAE9'],
         chart: {
@@ -111,6 +112,40 @@ class Rating extends Component {
                  Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100),
                  Math.floor(Math.random() * 100)] // Random whole numbers between 1 and 100
         }
+      ],
+     // Fourth chart (Averages of Users: Mean & Mode)
+     options4: {
+        colors: ['#11CAE9'],
+        chart: {
+          id: "chart-4"
+        },
+        xaxis: {
+          categories: ["Mean", "Mode"],
+          labels: {
+            style: {
+              colors: ['#fff', '#fff'],
+              fontSize: '12px',
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+            }
+          }
+        },
+        yaxis: {
+          labels: {
+            style: {
+              colors: '#fff',
+              fontSize: '12px',
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+            }
+          }
+        }
+      },
+      series4: [
+        {
+          name: "Averages of Users",
+          data: [5.23, 7] // Mean is 5, Mode is 7
+        }
       ]
     };
   }
@@ -139,9 +174,10 @@ class Rating extends Component {
               type="bar"
               width="500"
             />
+            </div>
              {/* Third Chart */}
           <div className="mixed-chart">
-            <h3 className="rating-h3">Number of Ratings 1-10</h3>
+            <h3 className="rating-h3">Your Ratings 1-10</h3>
             <Chart
               options={this.state.options3}
               series={this.state.series3}
@@ -149,7 +185,16 @@ class Rating extends Component {
               width="500"
             />
             </div>
-          </div>
+            {/* Fourth Chart */}
+          <div className="mixed-chart">
+            <h3 className="rating-h3">Averages of All Users</h3>
+            <Chart
+              options={this.state.options4}
+              series={this.state.series4}
+              type="bar"
+              width="500"
+            />
+         </div>
         </div>
       </div>
     );

@@ -31,7 +31,7 @@ function Survey () {
       <form >
         
           <div className="question-container">
-            <label className='survey-label'>Choose a Survey</label>
+            <label className='survey-label'>Select a Survey</label>
           </div>
         <button className='survey-button' type="submit">Submit</button>
       </form>

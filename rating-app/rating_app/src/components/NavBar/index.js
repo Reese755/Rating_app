@@ -8,6 +8,8 @@ function Navbar () {
   
   return (
     <nav className="navbar">
+
+    <h1 className="navbar-header">Honesty</h1>
     <ul className="navbar-list">
       <li>
         <Link to="/home">

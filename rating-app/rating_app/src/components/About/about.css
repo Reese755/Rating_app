@@ -51,6 +51,19 @@
   margin: 0;
 }
 
+.about-section-content {
+  overflow: hidden;
+  max-height: 0; /* Collapse by default */
+  opacity: 0; /* Transparent by default */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+
+.about-section-content.open {
+  max-height: 500px; /* Set a large enough height to accommodate content */
+  opacity: 1;
+}
+
 /* Make the layout responsive */
 @media (max-width: 768px) {
   .about-title {

@@ -1,7 +1,52 @@
 import './profile.css';
+import CapturePhoto from './CapturePhoto';
+import CropImage from './CropImage';
+import React, { useState } from 'react';
+import axios from 'axios';
+//import { saveImageToBackend } from './uploadService'; // Your image upload logic
 
 function Profile () {
 
+
+  const [capturedImage, setCapturedImage] = useState(null);
+  const [croppedImage, setCroppedImage] = useState(null);
+  
+  
+
+  const handleCapture = (image) => {
+    setCapturedImage(image);
+  };
+
+  const handleCropComplete = (croppedImage) => {
+    setCroppedImage(croppedImage);
+  };
+
+
+  
+  const handleSave = async () => {
+    if (croppedImage) {
+      const savedImageUrl = await saveImageToBackend(croppedImage);
+      console.log('Image saved:', savedImageUrl);
+    }
+  };
+
+
+
+const saveImageToBackend = async (image) => {
+  const formData = new FormData();
+  formData.append('file', image);
+
+  try {
+    const response = await axios.post('http://your-backend-url.com/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error uploading image:', error);
+  }
+};
    const profile = ['https://i.imgur.com/UwuQ4pq.jpeg']
 
 
@@ -10,7 +55,19 @@ function Profile () {
     <div className="profile-container">
   <h2>Update Profile</h2>
 
+  <div>
+      
+      {/* Take a picture */}
+      <CapturePhoto onCapture={handleCapture} />
 
+      {/* Crop image once captured */}
+      {capturedImage && (
+        <CropImage capturedImage={capturedImage} onCropComplete={handleCropComplete} />
+      )}
+
+      {/* Save button after cropping */}
+      {croppedImage && <button onClick={handleSave}>Save Image</button>}
+    </div>
     <div className="profile-image-container" >
         <img className='profile-img' src={profile} alt="profile" />
 

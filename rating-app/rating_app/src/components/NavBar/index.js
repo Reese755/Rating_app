@@ -23,7 +23,7 @@ function Navbar () {
       </li>
       <li>
         <Link to="/rating">
-          <FontAwesomeIcon icon={faBarChart} /> Rating
+          <FontAwesomeIcon icon={faBarChart} /> Ratings
         </Link>
       </li>
       <li>

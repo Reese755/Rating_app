@@ -111,6 +111,19 @@ function Home () {
         'https://tinyurl.com/48vrvvpr',
       ]
     },
+
+    {
+      name: 'Beyonce',
+      age: 43,
+      height: "5'6",
+      weight: '135 lbs',
+      gender: 'female',
+      images: [
+        'https://tinyurl.com/3dmrkcjm',
+        'https://tinyurl.com/y8c69rdp',
+        'https://tinyurl.com/ycyhwc5f',
+      ]
+    },
    
   ];
 
@@ -249,8 +262,8 @@ const button10 = <button className= "rating-round-button">10</button>
 
         {/* Modal for larger image */}
         {isModalOpen && (
-          <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="home-modal-overlay" onClick={closeModal}>
+            <div className="home-modal-content" onClick={(e) => e.stopPropagation()}>
               <img
                 src={filteredUsers[currentUserIndex].images[currentIndex]} // Use filteredUsers
                 alt="Large view"

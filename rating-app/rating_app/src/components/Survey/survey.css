@@ -11,7 +11,8 @@
   .survey-h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #fff;
+    margin-left: 140px;
   }
   
   .question-container {
@@ -22,6 +23,8 @@
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 20px;  
+    text-align: center;
   }
   
   /* input[type="text"] {
@@ -40,8 +43,16 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
+    font-size: 20px;
   }
   
   .survey-button:hover {
     background-color: #33333335;
   }
+
+  .survey-p {
+    text-align: center;
+  }
+
+  

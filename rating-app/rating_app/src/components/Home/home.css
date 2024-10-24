@@ -163,7 +163,7 @@ object-position: center;
 } 
 
 /* Modal styles */
-.modal-overlay {
+.home-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -176,7 +176,7 @@ object-position: center;
   z-index: 1000;
 }
 
-.modal-content {
+.home-modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 10px;

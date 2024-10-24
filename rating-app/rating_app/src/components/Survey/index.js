@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './survey.css';
+
 
 function Survey () {
   
@@ -17,7 +19,7 @@ function Survey () {
   return (
     <div>
       {/* Maps out each survery so that it's visible */}
-      <h1 className='survey-h1'>Available Surveys</h1>
+      <h1 className='survey-h1'>Select a Survey</h1>
       <ul>
         {surveys.map(survey => (
           <li key={survey.id}>
@@ -27,13 +29,13 @@ function Survey () {
       </ul>
       {/* Displays the survey container */}
       <div className="survey-container">
-      <h1 className='survey-h1'>Survey</h1>
       <form >
         
           <div className="question-container">
-            <label className='survey-label'>Select a Survey</label>
+            <label className='survey-label'>Survey On Physical Asthetics</label>
           </div>
-        <button className='survey-button' type="submit">Submit</button>
+          <p className="survey-p">13 Questions, estimated time: 2 minutes</p>
+          <Link to="/survey1" className="survey-button">Start Survey</Link>
       </form>
     </div>
     </div>

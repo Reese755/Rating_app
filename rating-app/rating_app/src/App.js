@@ -7,6 +7,7 @@ import Survey from './components/Survey';
 import Navbar from './components/NavBar';
 import Profile from './components/Profile';
 import Rating from './components/Rating';
+import Survey1 from './components/Survey/Survey1';
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="survey" element={<Survey />}/>
       <Route path="profile" element={<Profile />}/>
       <Route path="rating" element={<Rating />}/>
+      <Route path="/survey1" element={<Survey1 />} />
     </Routes>
     </div>
   </>

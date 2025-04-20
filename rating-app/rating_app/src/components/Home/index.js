@@ -16,19 +16,19 @@ function Home () {
       gender: 'male',
       images: [
         'https://i.imgur.com/UwuQ4pq.jpeg',
-        'https://i.imgur.com/CNmLa67.png',
+        'https://i.imgur.com/72BwKOz.png',
         'https://i.imgur.com/vVqDfQN.jpeg',
       ]
     },
 
     {
-      name: 'Taylor',
-      age: 25,
+      name: 'Chun-Li',
+      age: 40,
       height: "5'4",
       weight: '120 lbs',
       gender: 'female',
       images: [
-        'https://tinyurl.com/yc6d3ktm',
+        'https://cdn.midjourney.com/bb72fa44-466d-43a0-a615-8ba292dace50/0_0.png',
         'https://tinyurl.com/mtfratr4',
         'https://tinyurl.com/3yw5svz5',
       ]
@@ -128,6 +128,7 @@ function Home () {
   ];
 
 
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentUserIndex, setCurrentUserIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -138,7 +139,6 @@ function Home () {
   const toggleFilterDropdown = () => {
     setIsFilterDropdownOpen(!isFilterDropdownOpen);
   };
-
 
   // Function to filter users by gender
   const filterUsersByGender = (gender) => {
@@ -173,15 +173,11 @@ function Home () {
     setIsModalOpen(false);
   };
 
-
-  //// Cycles through users in chronological order. Use when testing users
-
-
+  // Cycles through users in chronological order. Use when testing users
   const switchUser = () => {
     setCurrentUserIndex((prevIndex) => (prevIndex + 1) % users.length);
     setCurrentIndex(0); // Reset image index when switching users
   };
-
 
   // Function to switch to a random user
   // const switchUser = () => {
@@ -198,40 +194,34 @@ function Home () {
   //   setCurrentIndex(0); // Reset image index for the new user
   // };
 
-
-// When the backend is up and running, replace the other button const's with this
+  // When the backend is up and running, replace the other button const's with this
   
-  // const button1 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>1</button>
-  // const button2 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>2</button>
-  // const button3 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>3</button>
-  // const button4 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>4</button>
-  // const button5 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>5</button>
-  // const button6 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>6</button>
-  // const button7 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>7</button>
-  // const button8 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>8</button>
-  // const button9 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>9</button>
-  // const button10 = <button className= "rating-button"onClick={(e) => createRating(e, user.id)}>10</button>
+  // const button1 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>1</button>
+  // const button2 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>2</button>
+  // const button3 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>3</button>
+  // const button4 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>4</button>
+  // const button5 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>5</button>
+  // const button6 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>6</button>
+  // const button7 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>7</button>
+  // const button8 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>8</button>
+  // const button9 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>9</button>
+  // const button10 = <button className="rating-button" onClick={(e) => createRating(e, user.id)}>10</button>
 
-const button1 = <button className= "rating-round-button">1</button>
-const button2 = <button className= "rating-round-button">2</button>
-const button3 = <button className= "rating-round-button">3</button>
-const button4 = <button className= "rating-round-button">4</button>
-const button5 = <button className= "rating-round-button">5</button>
-const button6 = <button className= "rating-round-button">6</button>
-const button7 = <button className= "rating-round-button">7</button>
-const button8 = <button className= "rating-round-button">8</button>
-const button9 = <button className= "rating-round-button">9</button>
-const button10 = <button className= "rating-round-button">10</button>
-
+  const button1 = <button className="rating-round-button">1</button>;
+  const button2 = <button className="rating-round-button">2</button>;
+  const button3 = <button className="rating-round-button">3</button>;
+  const button4 = <button className="rating-round-button">4</button>;
+  const button5 = <button className="rating-round-button">5</button>;
+  const button6 = <button className="rating-round-button">6</button>;
+  const button7 = <button className="rating-round-button">7</button>;
+  const button8 = <button className="rating-round-button">8</button>;
+  const button9 = <button className="rating-round-button">9</button>;
+  const button10 = <button className="rating-round-button">10</button>;
 
   return (
-
-    
-
-    // Add a skip profile button to image carosel under the rating buttons
     <div className="home-carousel-container">
-    <div className="filter-dropdown">
-        <FontAwesomeIcon icon={faBars} className="fa-filter-icon" onClick={toggleFilterDropdown} /> {/* Toggle filter dropdown */}
+      <div className="filter-dropdown">
+        <FontAwesomeIcon icon={faBars} className="fa-filter-icon" onClick={toggleFilterDropdown} />
         {isFilterDropdownOpen && (
           <div className="dropdown-content">
             <button onClick={() => filterUsersByGender('all')}>All</button>
@@ -240,47 +230,47 @@ const button10 = <button className= "rating-round-button">10</button>
           </div>
         )}
       </div>
-    {filteredUsers.length > 0 ? (
-      <div className="home-card">
-        <div className="home-carousel-image">
-          <div className="image-wrapper">
-            <img
-              src={filteredUsers[currentUserIndex].images[currentIndex]} // Use filteredUsers instead of users
-              alt={`Slide ${currentIndex + 1}`}
-              className="clickable-image"
-              onClick={openModal}
-            />
-            <div className="left-clickable" onClick={prevImage}></div>
-            <div className="right-clickable" onClick={nextImage}></div>
-          </div>
-        </div>
-        <h2 className="home-box-title">| {filteredUsers[currentUserIndex].name}</h2> {/* Use filteredUsers */}
-        <h5 className="home-h5"> Age: {filteredUsers[currentUserIndex].age} </h5>
-        <h5 className="home-h5"> Height: {filteredUsers[currentUserIndex].height}</h5>
-        <h5 className="home-h5"> Weight: {filteredUsers[currentUserIndex].weight} </h5>
-        <h5 className="home-h5"> Gender: {filteredUsers[currentUserIndex].gender} </h5>
-
-        {/* Modal for larger image */}
-        {isModalOpen && (
-          <div className="home-modal-overlay" onClick={closeModal}>
-            <div className="home-modal-content" onClick={(e) => e.stopPropagation()}>
+      {filteredUsers.length > 0 ? (
+        <div className="home-card">
+          <div className="home-carousel-image">
+            <div className="image-wrapper">
               <img
-                src={filteredUsers[currentUserIndex].images[currentIndex]} // Use filteredUsers
-                alt="Large view"
-                className="large-image"
+                src={filteredUsers[currentUserIndex].images[currentIndex]}
+                alt={`Slide ${currentIndex + 1}`}
+                className="clickable-image"
+                onClick={openModal}
               />
-              <button className="close-button" onClick={closeModal}>
-                &times;
-              </button>
+              <div className="left-clickable" onClick={prevImage}></div>
+              <div className="right-clickable" onClick={nextImage}></div>
             </div>
           </div>
-        )}
-        <div className="rating-button-container" onClick={switchUser}>{button1}{button2}{button3}{button4}{button5}{button6}{button7}{button8}{button9}{button10}</div>
-        
-           </div>
-            ) : (
-              <div>No users available for this filter.</div>
-            )}
+          <h2 className="home-box-title">| {filteredUsers[currentUserIndex].name}</h2>
+          <h5 className="home-h5"> Age: {filteredUsers[currentUserIndex].age} </h5>
+          <h5 className="home-h5"> Height: {filteredUsers[currentUserIndex].height}</h5>
+          <h5 className="home-h5"> Weight: {filteredUsers[currentUserIndex].weight} </h5>
+          <h5 className="home-h5"> Gender: {filteredUsers[currentUserIndex].gender} </h5>
+
+          {isModalOpen && (
+            <div className="home-modal-overlay" onClick={closeModal}>
+              <div className="home-modal-content" onClick={(e) => e.stopPropagation()}>
+                <img
+                  src={filteredUsers[currentUserIndex].images[currentIndex]}
+                  alt="Large view"
+                  className="large-image"
+                />
+                <button className="close-button" onClick={closeModal}>
+                  &times;
+                </button>
+              </div>
+            </div>
+          )}
+          <div className="rating-button-container" onClick={switchUser}>
+            {button1}{button2}{button3}{button4}{button5}{button6}{button7}{button8}{button9}{button10}
+          </div>
+        </div>
+      ) : (
+        <div>No users left available for this filter.</div>
+      )}
     </div>
   );
 };

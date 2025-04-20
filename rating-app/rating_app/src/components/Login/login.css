@@ -121,7 +121,7 @@ input {
 .login-sign-up-container {
 	left: 0;
 	width: 50%;
-	opacity: 0;
+	opacity: 1;
 	z-index: 1;
 }
 

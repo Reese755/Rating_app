@@ -52,3 +52,21 @@
     font-family: "Encode Sans", sans-serif;
    
   }
+
+  .logout-button {
+    background: none;
+    border: none;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .logout-button:hover {
+    text-decoration: underline;
+  }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './home.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars} from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,7 @@ function Home () {
 
   // Test data before making backend
  
-  const users = [
+  const userss = [
     {
       name: 'Reese',
       age: 30,
@@ -128,32 +128,40 @@ function Home () {
   ];
 
 
-  
+  const [users, setUsers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentUserIndex, setCurrentUserIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [filteredUsers, setFilteredUsers] = useState(users); // For filtering users
+  const [filteredUsers, setFilteredUsers] = useState(userss); // For filtering users
   const [selectedGender, setSelectedGender] = useState('all'); // Track selected filter
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false); // State for filter dropdown visibility
+
+   useEffect(() => {
+    fetch('http://localhost:3001/users', {
+      credentials: 'include',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data);
+        setFilteredUsers(data);
+      })
+      .catch((err) => console.error('Failed to fetch users:', err));
+  }, []);
 
   const toggleFilterDropdown = () => {
     setIsFilterDropdownOpen(!isFilterDropdownOpen);
   };
 
   // Function to filter users by gender
-  const filterUsersByGender = (gender) => {
+   const filterUsersByGender = (gender) => {
     setSelectedGender(gender);
-    let filtered = [];
-    if (gender === 'all') {
-      filtered = users;
-    } else {
-      filtered = users.filter(user => user.gender === gender);
-    }
+    let filtered = gender === 'all' ? users : users.filter(user => user.gender === gender);
     setFilteredUsers(filtered);
-    setCurrentUserIndex(0);  // Reset to the first filtered user
-    setCurrentIndex(0);  // Reset image index for the new user
-    setIsFilterDropdownOpen(false); // Close dropdown after selection
+    setCurrentUserIndex(0);
+    setCurrentIndex(0);
+    setIsFilterDropdownOpen(false);
   };
+
 
   // Handles picture cycling events
   const nextImage = () => {
@@ -175,7 +183,7 @@ function Home () {
 
   // Cycles through users in chronological order. Use when testing users
   const switchUser = () => {
-    setCurrentUserIndex((prevIndex) => (prevIndex + 1) % users.length);
+    setCurrentUserIndex((prevIndex) => (prevIndex + 1) % userss.length);
     setCurrentIndex(0); // Reset image index when switching users
   };
 
